@@ -1,0 +1,335 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    background-image: url(sasquach.jpeg);
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-color: rgb(54, 63, 72);
+    /* size */
+    width: 100vw;
+    height: 100vh;
+}
+    body{ /*WHOLE DOC*/
+        box-sizing: border-box;
+        /* height and width */
+        /* keep hight and width to center on background */
+        width: 99vw;
+        height: 99vh;
+        margin: 0 auto;
+        /* font */
+        font-family: "Barlow Condensed";
+        text-align: center;
+        font-size: 2vh;
+        color: rgb(0, 0, 0, 0.7);
+
+    }
+        nav{
+            /* background border */
+            background-color: rgba(0, 162, 255, 0.76);
+            border-radius: 2vh;
+            /* padding margin */
+            padding: 1vh;
+            margin: 1vh auto;
+            /* font */
+            font-family: lobster;
+        }
+            nav > a {
+                color: rgba(229, 145, 72, 0.8);
+            }
+        header{
+            /* background border */
+            background-color: rgba(76, 155, 196, 0.6);
+            border-radius: 8vh;
+            /* spacing */
+            padding: 0;
+            margin: 1vh auto;
+            /* font family */
+            font-family: Lobster;
+            font-size: 5vh;
+            font-weight: bolder;
+            color: rgba(54, 63, 72, 0.8);   
+            /* flex */
+            display: flex;
+            justify-content: space-evenly;
+        }
+        main{
+            /* placement */
+            /* change for mobile */
+            height: 85vh;
+            /* spacing */
+            box-sizing: border-box;
+            /* scroll */
+            overflow-y: scroll;
+            scrollbar-width: none;
+            /* flex */
+            /* change for mobile */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            main > div{
+            /* background and set */
+            background-color: rgba(229, 145, 72, 0.8);
+            border-radius: 3vh;
+            /* sizing */
+            padding: 1vh;
+            margin: 1vh;
+            max-height: 80vh;
+            width: max-content;
+            /* scroll */
+            overflow: scroll;
+            scrollbar-width: none;
+            }
+            main > div > div{
+                /* background and set */
+                background-color: inherit;
+                border-radius: 3vh;
+                /* sizing */
+                padding: 1vh;
+                margin: 1vh;
+                max-width: 600px;/* change for phone */
+                }
+
+
+/*HEADERS*/
+h2, h3, h4, h5, h6 {
+    color: rgba(54, 63, 72, 0.8);
+    font-family: lobster;
+    text-shadow: 0 0 1.5vh rgba(245, 245, 245,0.6);
+    padding: 0;
+    margin: 0;
+}
+
+/* TEXT MANIPULATION */
+.accent, a:hover, header, h2, h3, h4, h5, h6{
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+    @keyframes glow {
+        from {
+            text-shadow: 0 0 0.5vh #fff, 0 0 .8vh #fff, 0 0 1vh rgba(245, 245, 245,0.5), 0 0 1.2vh rgba(245, 245, 245,0.5), 0 0 1.4vh rgba(245, 245, 245,0.5), 0 0 1.6vh rgba(245, 245, 245,0.5), 0 0 1.8vh rgba(245, 245, 245,0.5);
+        }
+        to {
+            text-shadow: 0 0 .8vh #fff, 0 0 1vh rgba(245, 245, 245,0.7)s, 0 0 1.2vh, 0 0 1.6vh rgba(245, 245, 245,0.7), 0 0 1.8vh rgba(245, 245, 245,0.7), 0 0 2.2vh rgba(245, 245, 245,0.7);
+        }
+    }
+
+.emoji{
+    font-size: 10vh;
+}
+
+
+/* LINKS */
+a {
+    color:rgba(146, 79, 24, 0.8);
+    text-decoration: none;
+}
+
+/* FORMS */
+input, select, textarea, select:focus{
+    /* background and border */
+    background-color: rgba(240, 248, 255, 0.6);
+    border: none;
+    border-radius: 2vh;
+    outline: none;
+    /* display and placement */
+    display: block;
+    margin: 1vh auto;
+    padding: 1vh 2vh;
+    resize: none;
+    /* size */
+    box-sizing: border-box;
+    min-width: 400px;
+    /* font */
+    font-family: "Barlow Condensed";
+    font-size: 2vh;
+    color: rgb(0, 0, 0, 0.7);
+
+}
+
+/* TABLES */
+table{
+    border-collapse: collapse;
+    box-sizing: border-box;
+    /* background and border */
+    background-color: rgba(240, 248, 255, 0.6);
+    border: none;
+    /* widht */
+    width: 100%;
+    /* padding and margin */
+    padding: 1vh;
+    margin: 1vh auto;
+}
+    th {
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        background-color: rgba(54, 63, 72, 0.8); 
+        color: white;
+        word-break: keep-all;
+        }
+    td, th {
+    border: 1px solid rgba(240, 248, 255, 0.4);
+    padding: 8px;
+    }
+    td{
+        min-width: max-content;
+    }
+    tr:nth-child(even){
+        background-color: rgba(240, 248, 255, 0.3);
+    }
+        tr:hover {
+            background-color: rgba(240, 248, 255, 0.6);
+        }
+
+
+/* buttons */
+button{
+    /* background */
+    background-color: rgba(54, 63, 72, 0.8);
+    border: none;
+    border-radius: 1vh;
+    /* padding margin */
+    padding: 1vh 2vh;
+    /* font */
+    font-family: lobster;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.5vh;
+    /* button specific */
+    transition-duration: 0.7s;
+    cursor: pointer;
+}
+    button:hover {
+        background-color:rgba(54, 63, 72, 0.8);
+        color: rgba(253, 252, 252, 0.7);
+    }
+
+/* lists */
+ul {
+    padding: 0;
+    margin: 0;
+}
+    ul > li{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+/* SCROLLBARS */
+ /* Chrome, Safari and Opera */
+html::-webkit-scrollbar, main::-webkit-scrollbar, main > div::-webkit-scrollbar {
+    display: none;
+}
+    /* IE */
+    html, main, main > div{
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    } 
+
+/* images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+    #logo{
+        border-radius: 0;
+    }
+
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+    main{
+        display: block;
+        /* styling*/
+        color: rgba(0, 0, 0, 0.7); /* top: left right, bottom: left, right */
+        /* size */
+        height: 75vh;
+        max-height: 75vh;
+        width: 100vw;
+        max-width: 100vw;
+        /* margin padding */
+        margin: 0 auto;
+        /* scroll */
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+    main > div{
+        /* background and set */
+        background-color: rgba(253, 253, 253, 0.3);
+        border-radius: 3vh;
+        /* width height */
+        height: max-content;
+        max-height: max-content;
+        width: 100vw;
+        max-width: 100vw;
+        /* margin and padding */
+        padding: 1vh;
+        margin: 1vh;
+        overflow-y: scroll;
+    }
+    body, input, select, textarea, select:focus{
+        font-size: 5vh;
+        min-width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 450px) {
+    main{
+        display: block;
+        /* styling*/
+        color: rgba(0, 0, 0, 0.7); /* top: left right, bottom: left, right */
+        /* size */
+        height: 90vh;
+        max-height: 90vh;
+        width: 100vw;
+        max-width: 100vw;
+        /* margin padding */
+        margin: 0 auto;
+        /* scroll */
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+    main > div{
+        /* background and set */
+        border-radius: 3vh;
+        /* width height */
+        height: max-content;
+        max-height: max-content;
+        width: 100vw;
+        max-width: 100vw;
+        /* margin and padding */
+        padding: 1vh;
+        margin: 1vh;
+        /* scroll */
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+    input, select, textarea, select:focus{
+        min-width: 100%;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 950px){
+    main{
+        /* size */
+        width: 100vw;
+        /* display */
+        display: block;
+    }
+    main > div{
+        /* width height */
+        max-height: max-content;
+        width: max-content;
+        max-width: 90%;
+        margin: 1vh auto;
+    }
+    input, select, textarea, select:focus{
+        min-width: none;
+        width: 100%;
+    }
+}

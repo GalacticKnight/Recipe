@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1>Recipe list</h1><!--this is why we need session-->
+        <div>
+            <a href="/recipes/create">New recipe</a>
+            <a href="/logout">Log Out</a>
+        </div>
+        {% for recipe in recipes %}
+        <div>
+            <p>{{recipe.name}}</p>
+            <p>{{recipe.date_made}}</p>
+            <p>{{recipe.creator.first_name}}</p>
+            <div>
+                <a href="/recipes/view_recipe/{{recipe.id}}">Instructions</a>
+                {% if recipe.creator.id == user.id: %}
+                <a href="/recipes/edit_recipe/{{recipe.id}}">Edit</a>
+                <a href="/recipes/delete/{{recipe.id}}">Delete</a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </body>
+</html>

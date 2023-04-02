@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1>Report a recipe</h1>
+        <div>
+            <a href="/recipe/dashboard">Back to recipe</a>
+            <a href="/logout">Log Out</a>
+        </div>
+        <form action="/recipes/add_recipe" method="post"><!--this needs to match the route you are sending !!!!!!!!-->
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name"placeholder="name">
+            </div>
+            <div>
+                <label for="description">Description</label>
+                <textarea type="text" name="description"rows="5"></textarea>
+            </div>
+            <div>
+                <label for="instructions">Instructions</label>
+                <textarea type="text" name="instructions"rows="5"></textarea>
+            </div>
+            <div>
+                <label for="date_made">Date Made:</label>
+                <input type="date" name="date_made" required><!-- required notifies when you need this-->
+            </div>
+            <div>
+                <p>Under 30 minutes?</p>
+                <label for="yes">Yes</label>
+                <input type="radio" name="under_30" value="1">
+                <label for="no">No</label>
+                <input type="radio" name="under_30" value="0">
+            </div>
+            <input type="hidden" name="users_id" value="{{session['user_id']}}"><!--session is a dictionary and i gave it a key of user_id instead of users_id!!!!!!!!!!!!!!!!!!!!!thank you -->
+            <!-- value -->
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

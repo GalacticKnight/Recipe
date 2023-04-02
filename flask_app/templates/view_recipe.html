@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <div>
+            <h1>Welcome {{users.first_name}}</h1>
+            <div>
+                <a href="/recipe/dashboard">Back to Recipe</a>
+                <a href="/logout">Log Out</a>
+            </div>
+        </div>
+        <div>
+            <h3>{{recipes.name}}</h3>
+            
+        </div>
+        <div>
+            <div>
+                <p>Description</p>
+                <p>{{recipes.description}}</p>
+            </div>
+            <div>
+                <p>Instructions</p>
+                <p>{{recipes.instructions}}</p>
+            </div>
+            <div>
+                <p>Date made:</p>
+                <p>{{recipes.date_made}}</p>
+            </div>
+            <div>
+                <p>Under 30 minutes?</p>
+                <p>{{recipes.under_30}}</p>
+            </div>
+            <h4>Posted by: {{users.first_name}}</h4>
+        </div>
+    </body>
+</html>

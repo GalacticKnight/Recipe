@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1>Welcome {{users.first_name}}</h1>
+        <div>
+            <a href="/recipe/dashboard">Back to Recipes</a>
+            <a href="/logout">Log Out</a>
+        </div>
+        {% with messages = get_flashed_messages() %}<!-- THIS NEEDS TO BE MODIFIED -->
+            {% if messages %}
+                <div role="alert">
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <form action="/recipes/editing_recipe" method="post">
+            <div>
+                <label for="name">name</label>
+                <input type="text" name="name"placeholder="name" value="{{recipes.name}}">
+            </div>
+            <div>
+                <label for="description">description:</label>
+                <textarea type="text" name="description"rows="5">{{recipes.description}}</textarea>
+            </div>
+            <div>
+                <label for="instructions">Instructions</label>
+                <textarea type="text" name="instructions"rows="5">{{recipes.instructions}}</textarea>
+            </div>
+            <div>
+                <label for="date_made">date_made:</label>
+                <input type="date" name="date_made" value="{{recipes.date_made}}" required ><!-- required notifies when you need this-->
+            </div>
+            <div>
+                <p>Under 30 minutes?</p>
+                <label for="yes">Yes</label>
+                <input type="radio" name="under_30" value="1">
+                <label for="no">No</label>
+                <input type="radio" name="under_30" value="0">
+            </div>
+            <input type="hidden" name="user_id" value="{{recipes.creator.id}}"><!--------------------------------------->
+            <input type="hidden" name="id" value="{{recipes.id}}"><!--------------------------------------->
+            <input type="submit" value="Submit">
+            
+        </form>
+    </body>
+</html>
